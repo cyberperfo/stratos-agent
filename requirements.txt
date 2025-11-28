@@ -1,0 +1,6 @@
+feedparser
+google-generativeai
+pandas
+pymongo
+certifi
+schedule
