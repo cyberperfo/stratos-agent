@@ -5,3 +5,4 @@ pymongo
 certifi
 schedule
 flask
+python-dotenv
