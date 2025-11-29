@@ -10,11 +10,17 @@ import os
 from flask import Flask # YENİ: Sahte sunucu için
 import threading # YENİ: Aynı anda hem sunucu hem ajan çalışsın diye
 from dotenv import load_dotenv # YENİ: Kasa okuyucu
-
+load_dotenv()
 # ==========================================
 # ⚙️ AYARLAR (BURALARI KENDİ BİLGİLERİNLE DOLDUR)
 # ==========================================
 API_KEY = os.environ.get("GOOGLE_API_KEY") 
+# Hata Ayıklama (Dedektif): Anahtar okundu mu bakalım?
+if not API_KEY:
+    print("❌ HATA: .env dosyası okunamadı veya GOOGLE_API_KEY bulunamadı!")
+    # Test için anahtarı buraya GEÇİCİ olarak elle yazabilirsin ama tavsiye etmem.
+else:
+    print("✅ Google Anahtarı Algılandı.")
 
 # MongoDB bilgilerini de Render'dan çekecek şekilde ayarlayalım (Güvenli)
 # Eğer Render'daysa oradaki ayarları, değilse buradakileri kullanır
