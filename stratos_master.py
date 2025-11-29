@@ -9,13 +9,17 @@ import datetime
 import os
 from flask import Flask # YENİ: Sahte sunucu için
 import threading # YENİ: Aynı anda hem sunucu hem ajan çalışsın diye
+from dotenv import load_dotenv # YENİ: Kasa okuyucu
 
 # ==========================================
 # ⚙️ AYARLAR (BURALARI KENDİ BİLGİLERİNLE DOLDUR)
 # ==========================================
-API_KEY = "AIzaSyAWvTSVn8V68-38uPaKQk8tqJH8aydYB5U"
-DB_USER = "admin"       
-DB_PASS = "stratos2025" 
+API_KEY = os.environ.get("GOOGLE_API_KEY") 
+
+# MongoDB bilgilerini de Render'dan çekecek şekilde ayarlayalım (Güvenli)
+# Eğer Render'daysa oradaki ayarları, değilse buradakileri kullanır
+DB_USER = os.environ.get("DB_USER", "admin")       
+DB_PASS = os.environ.get("DB_PASS", "stratos2025") 
 CLUSTER = "cluster0.cglpxau.mongodb.net"
 
 # ==========================================
