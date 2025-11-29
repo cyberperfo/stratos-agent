@@ -9,8 +9,12 @@ import datetime
 import os
 from flask import Flask # YENİ: Sahte sunucu için
 import threading # YENİ: Aynı anda hem sunucu hem ajan çalışsın diye
-from dotenv import load_dotenv # YENİ: Kasa okuyucu
-load_dotenv()
+# Kütüphane varsa yükle, yoksa (Render'da) devam et
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass # Render ortamında bu kütüphane yoksa sorun etme
 # ==========================================
 # ⚙️ AYARLAR (BURALARI KENDİ BİLGİLERİNLE DOLDUR)
 # ==========================================
