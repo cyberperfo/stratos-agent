@@ -61,7 +61,20 @@ RSS_SOURCES = {
     "Defence News": "https://www.defensenews.com/arc/outboundfeeds/rss/",
     "Breaking Defense": "https://breakingdefense.com/feed/"
 }
-KEYWORDS = ["füze", "ihracat", "imza", "teslimat", "sözleşme", "missile", "deal", "contract", "uav", "siha", "kaan", "bayraktar", "aselsan"]
+# --- STRATEJİK FİLTRE (Gürültüyü engeller, istihbaratı yakalar) ---
+KEYWORDS = [
+    # Türkçe Kritik Terimler
+    "füze", "ihracat", "imza", "teslimat", "sözleşme", "anlaşma", 
+    "uav", "siha", "iha", "dron", "savaş uçağı", "helikopter", "tank", 
+    "donanma", "denizaltı", "radar", "elektronik harp", "siber",
+    "kaan", "kızılelma", "hürjet", "atak", "bayraktar", "akıncı", "aksungur",
+    "aselsan", "roketsan", "tusaş", "havelsan", "stm", "baykar", "bmc",
+    
+    # İngilizce Kritik Terimler (Global Kaynaklar İçin)
+    "missile", "export", "signed", "deal", "contract", "agreement", "delivery",
+    "fighter jet", "helicopter", "navy", "submarine", "army", "air force",
+    "lockheed", "boeing", "northrop", "airbus", "rheinmetall", "saab"
+]
 
 # ... (BURADAKİ FONKSİYONLAR AYNI KALIYOR: collect_intelligence, analyze_intelligence) ...
 # Kod uzamasın diye fonksiyonları tekrar yazmıyorum, senin mevcut kodundaki gibi kalsın.
